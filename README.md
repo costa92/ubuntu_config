@@ -7,7 +7,10 @@
 curl -sS https://starship.rs/install.sh | sh 
 ```
 
-
+### 2. 安装ripgrep [doc](https://github.com/BurntSushi/ripgrep)
+```shell
+sudo apt-get install ripgrep
+```
 
 
 [fish function](https://github.com/razzius/fish-functions)
