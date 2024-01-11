@@ -5,7 +5,8 @@
 
 # https://github.com/pure-fish/pure
 # Leader symbol for fish prompt
-starship init fish | source
+# starship init fish | source
+eval (starship init fish)
 
 set pure_symbol_prompt "\$"
 set pure_color_virtualenv magenta
@@ -173,7 +174,7 @@ if status is-interactive
 end
 
 
-set -x PATH $HOME/bin /usr/local/bin $PATH
+set -x PATH $HOME/bin /usr/local/bin /usr/bin/protoc/bin $PATH
 set -x PATH $PATH /usr/local/go/bin
 set -x GOPATH $HOME/code/go
 set -x PATH $PATH $GOPATH/bin
@@ -197,3 +198,10 @@ set -x GO111MODULE on
 # alias -s cmst "cd $HTGOPATH/cms/cms-api && git checkout testing  && git pull"
 # alias -s cmsd "cd $HTGOPATH/cms/cms-api && git checkout develop &&  git pull"
 # alias -s cmsm "cd $HTGOPATH/cms/cms-api && git checkout master  && git pull"
+
+# pnpm
+set -gx PNPM_HOME "/home/hellotalk/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
