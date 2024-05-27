@@ -1,0 +1,19 @@
+[http]
+	postBuffer = 524288000
+	version = HTTP/1.1
+	lowSpeedLimit = 0
+	lowSpeedTime = 999999
+    sslVerify = false
+
+
+[url "ssh://git@code.hellotalk.com/"]
+    insteadOf="https://code.hellotalk.com/"
+[user]
+	email = costa@helltalk.com
+	name = costa
+[core]
+	editor = /usr/local/nvim/bin/nvim
+[i18n]
+	commitencoding = utf-8
+[push]
+	autoSetupRemote = true
