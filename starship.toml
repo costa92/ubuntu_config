@@ -1,3 +1,9 @@
+# https://starship.rs/config
+# https://starship.rs/presets/nerd-font.html#configuration
+# https://gist.github.com/pythoninthegrass/faff76c2f571c57126e793733aae167d
+
+command_timeout = 1000
+
 format = """
 $os\
 $username\
