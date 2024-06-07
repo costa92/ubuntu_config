@@ -14,7 +14,7 @@ enabled_layouts stack
 enabled_layouts tall:bias=50;full_size=1;mirrored=false
 ```
 
-#### 设置快捷键 
+#### 设置快捷键
 
 ```Bash
 map ctrl+[ layout_action decrease_num_full_size_windows
@@ -55,12 +55,7 @@ map ctrl+home resize_window reset
 |以较少的浏览量向后滚动|[`ctrl+shift+h`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Browse-scrollback-buffer-in-pager)|
 |浏览最后一个 cmd 输出|[`ctrl+shift+g`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Browse-output-of-the-last-shell-command-in-pager)（参见[Shell 集成](https://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration)）|
 
-
-
-
 滚动操作仅在终端处于主屏幕时才有效。当备用屏幕处于活动状态时（例如，使用编辑器等全屏程序时），按键事件将传递给终端中运行的程序。
-
-
 
 ### 标签
 
@@ -74,9 +69,6 @@ map ctrl+home resize_window reset
 |向前移动标签|[`ctrl+shift+.`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Move-tab-forward)|
 |向后移动标签页|[`ctrl+shift+,`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Move-tab-backward)|
 |设置标签标题|[`ctrl+shift+alt+t`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Set-tab-title)（同样适用于 macOS）⇧+⌘+i|
-
-
-
 
 ## 窗口
 
@@ -94,9 +86,6 @@ map ctrl+home resize_window reset
 |视觉焦点窗口|[`ctrl+shift+f7`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Visually-select-and-focus-window)|
 |视觉交换窗口|[`ctrl+shift+f8`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Visually-swap-window-with-another)|
 |焦点特定窗口|[`ctrl+shift+1`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.First-window), [`ctrl+shift+2`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Second-window)… [`ctrl+shift+0`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Tenth-window) （macOS 上也是, … ）（从左上角开始顺时针）⌘+1⌘+2⌘+9|
-
-
-
 
 定义快捷方式来`kitty.conf`聚焦相邻窗口并移动窗口
 
@@ -172,6 +161,5 @@ map f9 close_other_windows_in_tab
 |降低背景不透明度|[`ctrl+shift+a>l`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Decrease-background-opacity)|
 |完全背景不透明|[`ctrl+shift+a>1`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Make-background-fully-opaque)|
 |重置背景不透明度|[`ctrl+shift+a>d`](https://sw.kovidgoyal.net/kitty/conf/#shortcut-kitty.Reset-background-opacity)|
-
 
 map f9 close_other_windows_in_tab
