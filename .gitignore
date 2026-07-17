@@ -1,0 +1,4 @@
+# 密钥文件，仅存在于本机，绝不入库。
+# 对应的 *.example 模板是入库的。
+fish/secrets.fish
+zsh/zsh.d/secrets.zsh
