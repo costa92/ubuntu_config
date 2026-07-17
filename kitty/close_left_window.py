@@ -17,3 +17,4 @@ for win in current_tab['windows']:
 # 如果有前一个窗格，关闭它
 if 'prev_window_id' in locals():
     subprocess.run(['kitty', '@', 'close-window', '--match', f'id:{prev_window_id}'])
+

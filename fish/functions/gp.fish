@@ -1,6 +1,6 @@
 function gp --wraps='git push' --description 'alias gp git push'
-    set remote_branches $(git branch -r | sed 's/origin\///' | sed 's/ //g')
-    set current_branch $(git rev-parse --abbrev-ref HEAD)
+    set remote_branches (git branch -r | sed 's/origin\///' | sed 's/ //g')
+    set current_branch (git rev-parse --abbrev-ref HEAD)
     set remote_branch_exists 0
     for o in $remote_branches
         if test $o = $current_branch

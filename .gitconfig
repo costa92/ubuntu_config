@@ -1,9 +1,9 @@
 [http]
-	postBuffer = 524288000
+	postBuffer = 1048576000
 	version = HTTP/1.1
 	lowSpeedLimit = 0
 	lowSpeedTime = 999999
-    sslVerify = false
+	sslVerify = false
 
 
 [url "ssh://git@code.hellotalk.com/"]
@@ -11,9 +11,79 @@
 [user]
 	email = costa@helltalk.com
 	name = costa
+
 [core]
-	editor = /usr/local/nvim/bin/nvim
+  editor = /usr/local/nvim/bin/nvim
+  compression = -1
+  pager = delta
+  autocrlf = input  # 推荐跨平台设置
+  ;excludesfile = ~/.gitignore_global
+
+
 [i18n]
 	commitencoding = utf-8
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
+[color]
+  ui = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[merge]
+  tool = meld
+  conflictstyle = zdiff3
+
+[mergetool]
+  keepBackup = false
+  prompt = false
+
+[mergetool "meld"]
+  cmd = meld $LOCAL $BASE $REMOTE --output=$MERGED --auto-merge
+  # macOS
+  # cmd = open -a Meld "$LOCAL" "$BASE" "$REMOTE" --args --output="$MERGED" --auto-merge
+  trustExitCode = true
+
+[delta]
+  side-by-side = true 
+  line-numbers = true
+  navigate = true
+  syntax-theme = OneHalfDark
+  features = decorations
+
+[diff]
+  colorMoved = default
+  tool = meld
+
+[difftool "meld"]
+  # macOS
+  ;cmd = open -a Meld "$LOCAL" "$REMOTE"
+  # Linux (uncomment if needed)
+  cmd = meld "$LOCAL" "$REMOTE"
+  trustExitCode = true
+
+[init]
+	defaultBranch = main
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true 
+
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  lg = log --oneline --graph --decorate
+  md = difftool --tool=meld
+  df = diff --color-words
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

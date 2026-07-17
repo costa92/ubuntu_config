@@ -1,6 +1,6 @@
 function gl --wraps='git pull' --description 'alias gl git pull'
-    set remote_branches $(git branch -r | sed 's/origin\///')
-    set current_branch $(git rev-parse --abbrev-ref HEAD)
+    set remote_branches (git branch -r | sed 's/origin\///')
+    set current_branch (git rev-parse --abbrev-ref HEAD)
     set remote_branch_exists 0
     for o in $remote_branches
         if test $o != $current_branch
