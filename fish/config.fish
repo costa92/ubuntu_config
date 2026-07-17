@@ -75,18 +75,12 @@ set -gx GOPROXY https://proxy.golang.org,direct
 
 # pyhone env variables
 set -x _OLD_VIRTUAL_PATH $PATH
-set -gx PATH $PATH $HOME/anaconda3/bin
 
 set -x CUDA_VISIBLE_DEVICES 0
 
 # krew env variables 
 # https://krew.sigs.k8s.io/docs/user-guide/setup/install/
 set -gx PATH $PATH $HOME/.krew/bin
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/hellotalk/anaconda3/bin/conda "shell.fish" hook $argv | source
-# <<< conda initialize <<<
 
 # Generated for envman. Do not edit.
 test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
