@@ -87,6 +87,10 @@ else
     echo "已安装到 $FONT_DIR"
 fi
 
+step "nvim 配置（submodule）"
+# 未用 --recursive clone 时目录为空，install.sh 会因此跳过 nvim 软链。
+git -C "$REPO" submodule update --init nvim
+
 step "配置软链与 oh-my-zsh"
 # install.sh 负责 oh-my-zsh 本体、custom 插件与全部配置软链。
 "$REPO/install.sh"
@@ -102,6 +106,6 @@ cat <<EOF
 
 安装完成。后续手动步骤：
   1. 填写密钥：fish/secrets.fish 与 zsh/zsh.d/secrets.zsh（从同名 .example 生成）
-  2. nvim 配置为 submodule，执行：git submodule update --init --recursive
-  3. 重新登录以应用 shell 变更
+  2. 重新登录以应用 shell 变更
+  3. 首次启动 nvim 会自动安装插件
 EOF

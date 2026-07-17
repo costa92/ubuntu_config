@@ -40,6 +40,13 @@ link .gitconfig     "$HOME/.gitconfig"
 link zsh/.zshrc     "$HOME/.zshrc"
 link zsh/zsh.d      "$HOME/.zsh.d"
 
+# nvim 配置是 submodule（costa92/lazy-vim），未初始化时目录为空，链过去等于没有配置。
+if [ -f "$REPO/nvim/init.lua" ]; then
+    link nvim "$HOME/.config/nvim"
+else
+    echo "跳过 nvim：submodule 未初始化，请执行 git submodule update --init"
+fi
+
 # 密钥文件不入库，新机器需从模板生成后手动填值。
 seed_secrets() {
     local example="$REPO/$1" target="$REPO/${1%.example}"
@@ -77,8 +84,6 @@ clone_plugin https://github.com/bobthecow/git-flow-completion.git      git-flow-
 # tmux.conf 会改变 tmux 行为（prefix 改为 C-a、vi 模式等）。
 # link tmux/tmux.conf "$HOME/.tmux.conf"
 # link alacritty      "$HOME/.config/alacritty"
-
-# nvim 是独立仓库（costa92/lazy-vim），自行管理，不在此处链接。
 
 echo
 echo "完成。"

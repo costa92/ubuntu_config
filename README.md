@@ -43,13 +43,25 @@ $ ./install.sh
 
 > 提交前留意不要把密钥写回 `env.zsh` / `config.fish`。
 
+## 修改 nvim 配置
+
+`nvim/` 是 submodule，改动要在子仓库里提交，再回父仓库更新引用：
+
+```shell
+$ cd nvim              # 或 ~/.config/nvim，同一目录
+$ git add . && git commit -m "..." && git push
+$ cd .. && git add nvim && git commit -m "chore: 更新 nvim 引用"
+```
+
+submodule 已固定跟踪 `main` 分支，`git submodule update --remote nvim` 可拉取最新。
+
 ## 目录结构
 
 | 目录 | 说明 | 软链目标 |
 |---|---|---|
 | `zsh/` | zsh + oh-my-zsh 配置 | `~/.zshrc`、`~/.zsh.d` |
 | `kitty/` | kitty 终端 | `~/.config/kitty` |
-| `nvim/` | neovim（submodule → [lazy-vim](https://github.com/costa92/lazy-vim)） | 独立仓库，自行管理 |
+| `nvim/` | neovim（submodule → [lazy-vim](https://github.com/costa92/lazy-vim)） | `~/.config/nvim` |
 | `fish/` | fish shell | `~/.config/fish` |
 | `starship.toml` | starship 提示符 | `~/.config/starship.toml` |
 | `.gitconfig` | git 全局配置 | `~/.gitconfig` |
